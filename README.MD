@@ -62,7 +62,8 @@ Add your webpack config file.
 Add your .babelrc file.
 
 Add your HTML content.
-Webpack Build Commands:
+
+# Webpack Build Commands:
 
 ```sh
 
@@ -70,10 +71,11 @@ npx webpack --mode production
 
 npx webpack --mode development
 
-Webpack Serve Commands
 ```
-```sh
 
+# Webpack Build Commands
+
+```sh
 npx webpack serve --mode production
 
 npx webpack serve --mode development
