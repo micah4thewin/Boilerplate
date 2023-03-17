@@ -4,12 +4,33 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
+const pages = require('./pages');
+
+export const generateEntryPoints = () => {
+  const entries = {};
+  for (const page of pages) {
+    entries[page.name] = `${page.path}/index.js`;
+  }
+  return entries;
+}
+
+export const generateHtmlPlugins = () => {
+  return pages.map(
+    (page) =>
+      new HtmlWebpackPlugin({
+        template: `${page.path}/index.html`,
+        filename: `${page.name}.html`,
+        chunks: [page.name],
+        minify: true,
+      })
+  );
+}
 
 module.exports = {
   mode: 'development',
   entry: {
     main: './src/index.js',
-    home: './src/pages/home/index.js',
+    ...generateEntryPoints(),
   },
   output: {
     filename: '[name].bundle.js',
@@ -123,11 +144,7 @@ module.exports = {
     open: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/pages/home/index.html',
-      favicon: './src/assets/images/favicon.ico',
-      minify: true,
-    }),
+    ...generateHtmlPlugins(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
