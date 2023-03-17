@@ -1,0 +1,29 @@
+/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */
+
+/*! ../../shared/css/font.css */
+
+/*! ../../shared/html/footer.html */
+
+/*! ../../shared/html/topnav.html */
+
+/*! aos */
+
+/*! aos/dist/aos.css */
+
+/*! typed.js */
+
+/*!*********************************!*\
+  !*** ./src/shared/css/font.css ***!
+  \*********************************/
+
+/*!**********************************!*\
+  !*** ./src/pages/about/index.js ***!
+  \**********************************/
+
+/*!*************************************!*\
+  !*** ./src/shared/html/footer.html ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/shared/html/topnav.html ***!
+  \*************************************/

@@ -8,29 +8,31 @@ This Webpack boilerplate provides a solid foundation for modern web development 
 
 ```sh
 mkdir -p hello-world/src/pages/home hello-world/src/assets/{fonts,images,videos} hello-world/src/shared
-
+```
+```sh
 touch hello-world/LICENSE hello-world/package.json hello-world/package-lock.json hello-world/README.MD hello-world/webpack.config.js hello-world/.gitignore
-
+```
+```sh
 touch hello-world/src/index.js hello-world/src/pages/home/{index.html,index.js,style.css} hello-world/src/shared/{font.css,footer.html,topnav.html}
-
-sh
-
+```
+```sh
 cd hello-world
+```
 
 # Initialize NPM and install the required packages
-
+```sh
 npm init -y
-
+```
+```sh
 npm install webpack webpack-dev-server webpack-cli copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin css-loader sass-loader sass file-loader url-loader image-minimizer-webpack-plugin imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo terser-webpack-plugin bootstrap bootstrap-icons aos typed.js --save-dev
-
+```
 # Create the necessary files
-
+```sh
 touch index.html webpack.config.js src/index.js src/pages/home/index.html src/pages/home/index.js src/pages/home/style.css
-
+```
 Tree visualization:
 
-css
-
+```css
 hello-world
 ├── LICENSE
 ├── package.json
@@ -53,6 +55,7 @@ hello-world
         ├── font.css
         ├── footer.html
         └── topnav.html
+```
 
 Add your webpack config file.
 
@@ -61,21 +64,18 @@ Add your .babelrc file.
 Add your HTML content.
 Webpack Build Commands:
 
-sh
+```sh
 
 npx webpack --mode production
 
 npx webpack --mode development
 
 Webpack Serve Commands
-
-sh
+```
+```sh
 
 npx webpack serve --mode production
 
 npx webpack serve --mode development
 
-vbnet
-
-
-Copy and paste this content into your README file, making sure to replace the placeholders for the file links with the actual links to your files.
+```

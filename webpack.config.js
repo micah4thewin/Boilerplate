@@ -2,20 +2,23 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
-const pages = require('./pages');
+const pages = require('./src/pages.js');
 
-export const generateEntryPoints = () => {
+
+function generateEntryPoints() {
   const entries = {};
   for (const page of pages) {
     entries[page.name] = `${page.path}/index.js`;
   }
+  console.log("Generated entry points:", entries);
   return entries;
 }
 
-export const generateHtmlPlugins = () => {
-  return pages.map(
+function generateHtmlPlugins() {
+  const plugins = pages.map(
     (page) =>
       new HtmlWebpackPlugin({
         template: `${page.path}/index.html`,
@@ -24,27 +27,33 @@ export const generateHtmlPlugins = () => {
         minify: true,
       })
   );
+  console.log("Generated HTML plugins:", plugins);
+  return plugins;
 }
 
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js',
     ...generateEntryPoints(),
   },
+
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     clean: true,
   },
+
   devtool: "source-map",
   devServer: {
-  contentBase: path.join(__dirname, 'dist'),
-  compress: true,
-  port: 9000,
-  open: true,
-  hot: true,
-},
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8090,
+    open: true,
+    hot: true,
+    historyApiFallback: true,
+  },
+
   module: {
     rules: [
       {
@@ -100,7 +109,6 @@ module.exports = {
       },
     ]
   },
-
   optimization: {
     minimize: true,
     minimizer: [
@@ -131,24 +139,42 @@ module.exports = {
           },
         },
       }),
-
-
     ],
     splitChunks: {
       chunks: 'all',
     },
   },
   devServer: {
-    hot: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
     port: 8090,
     open: true,
+    hot: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: '/home.html' },
+        { from: /^\/about/, to: '/about.html' },
+        // Add more rewrites as needed
+      ],
+    },
   },
+
   plugins: [
     ...generateHtmlPlugins(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+    new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: 'src/assets/images/favicon.ico',
+        to: 'favicon.ico',
+      },
+    ],
+  }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
