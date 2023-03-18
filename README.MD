@@ -10,21 +10,16 @@ mkdir -p my-project/{src/{app/auth,assets/{fonts,images,videos},pages/{about,con
 ```sh
 touch my-project/{LICENSE,package.json,package-lock.json,README.MD,webpack.config.js,src/{app/auth/{auth_content.js,auth_forgot_password.js,auth_login.js,auth_logout.js,auth_signup.js,auth_user.js},pages/{about/{index.html,index.js,style.css},contact/{index.html,index.js,style.css},forgot/{index.html,index.js,style.css},forgot_confirm/{index.html,index.js,style.css},home/{index.html,index.js,style.css},login/{index.html,index.js,style.css},privacy/{index.html,index.js,style.css},secret/{index.html,index.js,style.css},signup/{index.html,index.js,style.css},signup_confirm/{index.html,index.js,style.css},tos/{index.html,index.js,style.css}},pages.js,shared/{css/font.css,html/{footer.html,topnav.html}}}}
 ```
-
 ```sh
 cd my-project
 ```
-
 ### Initialize NPM and install the required packages
+
 ```sh
 npm init -y
 ```
 ```sh
-npm install webpack webpack-dev-server webpack-cli copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin css-loader sass-loader sass file-loader url-loader image-minimizer-webpack-plugin imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo terser-webpack-plugin bootstrap bootstrap-icons aos typed.js --save-dev
-```
-### Create the necessary files
-```sh
-touch index.html webpack.config.js src/index.js src/pages/home/index.html src/pages/home/index.js src/pages/home/style.css
+npm install webpack webpack-dev-server webpack-cli copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin css-loader sass-loader sass file-loader url-loader image-minimizer-webpack-plugin imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo terser-webpack-plugin bootstrap bootstrap-icons aos typed.js @babel/core @babel/preset-env babel-loader html-loader --save-dev
 ```
 ## Tree visualization:
 
