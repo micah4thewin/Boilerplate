@@ -32,92 +32,25 @@ my-project
 ├── src
 │   ├── app
 │   │   └── auth
-│   │       ├── auth_content.js
-│   │       ├── auth_forgot_password.js
-│   │       ├── auth_login.js
-│   │       ├── auth_logout.js
-│   │       ├── auth_signup.js
-│   │       └── auth_user.js
 │   ├── assets
 │   │   ├── fonts
-│   │   │   ├── AvenirNextLTPro-Bold.otf
-│   │   │   ├── AvenirNextLTPro-Bold.ttf
-│   │   │   ├── AvenirNextLTPro-Bold.woff
-│   │   │   ├── AvenirNextLTPro-Bold.woff2
-│   │   │   ├── AvenirNextLTPro-It.otf
-│   │   │   ├── AvenirNextLTPro-It.ttf
-│   │   │   ├── AvenirNextLTPro-It.woff
-│   │   │   ├── AvenirNextLTPro-It.woff2
-│   │   │   ├── AvenirNextLTPro-Regular.otf
-│   │   │   ├── AvenirNextLTPro-Regular.ttf
-│   │   │   ├── AvenirNextLTPro-Regular.woff
-│   │   │   ├── AvenirNextLTPro-Regular.woff2
-│   │   │   ├── Gilroy-ExtraBold.otf
-│   │   │   ├── Gilroy-ExtraBold.ttf
-│   │   │   ├── Gilroy-ExtraBold.woff
-│   │   │   ├── Gilroy-ExtraBold.woff2
-│   │   │   ├── Gilroy-Light.otf
-│   │   │   ├── Gilroy-Light.ttf
-│   │   │   ├── Gilroy-Light.woff
-│   │   │   ├── Gilroy-Light.woff2
-│   │   │   └── stylesheet.css
 │   │   ├── images
-│   │   │   ├── favicon.ico
-│   │   │   ├── logo.png
-│   │   │   └── thumbnail.jpg
 │   │   └── videos
 │   ├── pages
 │   │   ├── about
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── contact
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── forgot
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── forgot_confirm
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── home
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── login
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── privacy
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── secret
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── signup
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   ├── signup_confirm
-│   │   │   ├── index.html
-│   │   │   ├── index.js
-│   │   │   └── style.css
 │   │   └── tos
-│   │       ├── index.html
-│   │       ├── index.js
-│   │       └── style.css
-│   ├── pages.js
 │   └── shared
 │       ├── css
-│       │   └── font.css
 │       └── html
-│           ├── footer.html
-│           └── topnav.html
 └── webpack.config.js
 
 ```
