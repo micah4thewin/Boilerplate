@@ -16,7 +16,6 @@ function generateEntryPoints() {
   console.log("Generated entry points:", entries);
   return entries;
 }
-
 function generateHtmlPlugins() {
   const plugins = pages.map(
     (page) =>
@@ -30,7 +29,6 @@ function generateHtmlPlugins() {
   console.log("Generated HTML plugins:", plugins);
   return plugins;
 }
-
 module.exports = {
   mode: 'development',
   entry: {
@@ -43,7 +41,6 @@ module.exports = {
     publicPath: '/',
     clean: true,
   },
-
   devtool: "source-map",
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -156,6 +153,15 @@ module.exports = {
       rewrites: [
         { from: /^\/$/, to: '/home.html' },
         { from: /^\/about/, to: '/about.html' },
+        { from: /^\/signup/, to: '/signup.html' },
+        { from: /^\/signup_confirm/, to: '/signup_confirm.html' },
+        { from: /^\/login/, to: '/login.html' },
+        { from: /^\/forgot/, to: '/forgot.html' },
+        { from: /^\/forgot_confirm/, to: '/forgot_confirm.html' },
+        { from: /^\/secret/, to: '/secret.html' },
+        { from: /^\/tos/, to: '/tos.html' },
+        { from: /^\/contact/, to: '/contact.html' },
+        { from: /^\/privacy/, to: '/privacy.html' },
         // Add more rewrites as needed
       ],
     },

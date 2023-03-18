@@ -1,9 +1,0 @@
-/*! bootstrap-icons/font/bootstrap-icons.css */
-
-/*! bootstrap/dist/css/bootstrap.min.css */
-
-/*! bootstrap/dist/js/bootstrap.bundle.min */
-
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/

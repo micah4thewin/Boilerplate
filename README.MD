@@ -2,9 +2,7 @@
 
 This Webpack boilerplate provides a solid foundation for modern web development projects, integrating popular features and optimizations out-of-the-box. The boilerplate includes support for JavaScript (ES6+), CSS, and HTML files, as well as popular libraries and tools such as Babel, AOS, and Typed.js.
 
-## Create folder hierarchy and asset organization:
-
-### Set up the project
+### Create folder hierarchy and asset organization:
 
 ```sh
 mkdir -p hello-world/src/pages/home hello-world/src/assets/{fonts,images,videos} hello-world/src/shared
@@ -19,18 +17,18 @@ touch hello-world/src/index.js hello-world/src/pages/home/{index.html,index.js,s
 cd hello-world
 ```
 
-# Initialize NPM and install the required packages
+### Initialize NPM and install the required packages
 ```sh
 npm init -y
 ```
 ```sh
 npm install webpack webpack-dev-server webpack-cli copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin css-loader sass-loader sass file-loader url-loader image-minimizer-webpack-plugin imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-svgo terser-webpack-plugin bootstrap bootstrap-icons aos typed.js --save-dev
 ```
-# Create the necessary files
+### Create the necessary files
 ```sh
 touch index.html webpack.config.js src/index.js src/pages/home/index.html src/pages/home/index.js src/pages/home/style.css
 ```
-Tree visualization:
+## Tree visualization:
 
 ```css
 hello-world
@@ -57,26 +55,32 @@ hello-world
         └── topnav.html
 ```
 
-Add your webpack config file.
+### Add your content
 
-Add your .babelrc file.
+- Add your webpack config file.
 
-Add your HTML content.
+- Add your .babelrc file.
 
-# Webpack Build Commands:
+- Add your HTML content.
+
+
+## Webpack Build Commands:
+
+### Production:
 
 ```sh
 
 npx webpack --mode production
 
-npx webpack --mode development
+npx webpack serve --mode production
 
 ```
 
-# Webpack Build Commands
+### Development:
 
 ```sh
-npx webpack serve --mode production
+
+npx webpack --mode development
 
 npx webpack serve --mode development
 
