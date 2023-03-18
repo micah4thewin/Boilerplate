@@ -1,4 +1,7 @@
-import { userAuthState } from './auth_user';
+import { Amplify } from 'aws-amplify';
+
+import awsExports from '../../aws-exports';
+Amplify.configure(awsExports);
 
 export function checkAuthContent() {
 // If not authenticated, pages with containing the id of 'authenticated-content' will redirect to login.html.

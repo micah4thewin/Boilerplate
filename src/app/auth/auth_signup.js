@@ -1,4 +1,8 @@
-console.log("auth_signup.js loaded...");
+import { userAuthState } from './auth_user';
+import { Amplify } from 'aws-amplify';
+
+import awsExports from '../../aws-exports';
+Amplify.configure(awsExports);
 
 import { Auth } from 'aws-amplify';
 
