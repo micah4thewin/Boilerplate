@@ -7,7 +7,6 @@ const webpack = require('webpack');
 const path = require('path');
 const pages = require('./src/pages.js');
 
-
 function generateEntryPoints() {
   const entries = {};
   for (const page of pages) {
@@ -16,15 +15,16 @@ function generateEntryPoints() {
   console.log("Generated entry points:", entries);
   return entries;
 }
+
 function generateHtmlPlugins() {
   const plugins = pages.map(
     (page) =>
-      new HtmlWebpackPlugin({
-        template: `${page.path}/index.html`,
-        filename: `${page.name}.html`,
-        chunks: [page.name],
-        minify: true,
-      })
+    new HtmlWebpackPlugin({
+      template: `${page.path}/index.html`,
+      filename: `${page.name}.html`,
+      chunks: [page.name],
+      minify: true,
+    })
   );
   console.log("Generated HTML plugins:", plugins);
   return plugins;
@@ -52,8 +52,7 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: 'asset/resource',
         generator: {
@@ -115,9 +114,15 @@ module.exports = {
           implementation: ImageMinimizerPlugin.imageminGenerate,
           options: {
             plugins: [
-              ['gifsicle', { interlaced: true }],
-              ['jpegtran', { progressive: true }],
-              ['optipng', { optimizationLevel: 5 }],
+              ['gifsicle', {
+                interlaced: true
+              }],
+              ['jpegtran', {
+                progressive: true
+              }],
+              ['optipng', {
+                optimizationLevel: 5
+              }],
               [
                 'svgo',
                 {
@@ -150,18 +155,50 @@ module.exports = {
     open: true,
     hot: true,
     historyApiFallback: {
-      rewrites: [
-        { from: /^\/$/, to: '/home.html' },
-        { from: /^\/about/, to: '/about.html' },
-        { from: /^\/signup/, to: '/signup.html' },
-        { from: /^\/signup_confirm/, to: '/signup_confirm.html' },
-        { from: /^\/login/, to: '/login.html' },
-        { from: /^\/forgot/, to: '/forgot.html' },
-        { from: /^\/forgot_confirm/, to: '/forgot_confirm.html' },
-        { from: /^\/secret/, to: '/secret.html' },
-        { from: /^\/tos/, to: '/tos.html' },
-        { from: /^\/contact/, to: '/contact.html' },
-        { from: /^\/privacy/, to: '/privacy.html' },
+      rewrites: [{
+          from: /^\/$/,
+          to: '/home.html'
+        },
+        {
+          from: /^\/about/,
+          to: '/about.html'
+        },
+        {
+          from: /^\/signup/,
+          to: '/signup.html'
+        },
+        {
+          from: /^\/signup_confirm/,
+          to: '/signup_confirm.html'
+        },
+        {
+          from: /^\/login/,
+          to: '/login.html'
+        },
+        {
+          from: /^\/forgot/,
+          to: '/forgot.html'
+        },
+        {
+          from: /^\/forgot_confirm/,
+          to: '/forgot_confirm.html'
+        },
+        {
+          from: /^\/secret/,
+          to: '/secret.html'
+        },
+        {
+          from: /^\/tos/,
+          to: '/tos.html'
+        },
+        {
+          from: /^\/contact/,
+          to: '/contact.html'
+        },
+        {
+          from: /^\/privacy/,
+          to: '/privacy.html'
+        },
         // Add more rewrites as needed
       ],
     },
@@ -174,13 +211,11 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new CopyWebpackPlugin({
-    patterns: [
-      {
+      patterns: [{
         from: 'src/assets/images/favicon.ico',
         to: 'favicon.ico',
-      },
-    ],
-  }),
+      }, ],
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
