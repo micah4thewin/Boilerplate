@@ -11,7 +11,7 @@ import Typed from 'typed.js';
 import '../../shared/css/font.css';
 import topnav from "../../shared/html/topnav.html";
 import footer from "../../shared/html/footer.html";
-// Auth 
+// Auth
 import { userAuthState } from '../../app/auth/auth_user';
 import { checkAuthContent } from '../../app/auth/auth_content';
 import { signUp, confirmSignUp, resendConfirmationCode } from '../../app/auth/auth_signup';
@@ -49,6 +49,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const footerElement = document.createElement('div');
   footerElement.innerHTML = footer;
   document.body.appendChild(footerElement);
+
+
+  // Dynamic Auth Button for login/logout
+  const updateAuthButton = (isAuthenticated) => {
+  const authButton = document.getElementById('authButton');
+
+  if (isAuthenticated) {
+    authButton.textContent = 'Logout';
+    authButton.addEventListener('click', () => {
+      signOut().then(() => {
+        window.location.href = '/';
+      });
+    });
+  } else {
+    authButton.textContent = 'Login';
+    authButton.addEventListener('click', () => {
+      window.location.href = '/login';
+    });
+  }
+};
+
+userAuthState()
+  .then((data) => {
+    console.log('user is authenticated: ', data);
+    updateAuthButton(true);
+  })
+  .catch((error) => {
+    console.log('user is not authenticated: ', error);
+    updateAuthButton(false);
+  });
 
   // Set copyright year
   setCopyrightYear();
