@@ -12,7 +12,6 @@ function generateEntryPoints() {
   for (const page of pages) {
     entries[page.name] = `${page.path}/index.js`;
   }
-  console.log("Generated entry points:", entries);
   return entries;
 }
 
@@ -26,7 +25,6 @@ function generateHtmlPlugins() {
       minify: true,
     })
   );
-  console.log("Generated HTML plugins:", plugins);
   return plugins;
 }
 module.exports = {
