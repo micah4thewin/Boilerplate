@@ -1,6 +1,6 @@
 module.exports = [
   {
-    name: 'home',
+    name: 'index',
     path: './src/pages/home',
   },
   {
@@ -43,5 +43,4 @@ module.exports = [
     name: 'privacy',
     path: './src/pages/privacy',
   },
-  // Add more pages as needed
 ];

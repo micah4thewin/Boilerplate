@@ -8,7 +8,7 @@ This Webpack boilerplate provides a solid foundation for modern web development 
 mkdir -p my-project/{src/{app/auth,assets/{fonts,images,videos},pages/{about,contact,forgot,forgot_confirm,home,login,privacy,secret,signup,signup_confirm,tos},shared/{css,html}},}
 ```
 ```sh
-touch my-project/{LICENSE,package.json,package-lock.json,README.MD,webpack.config.js,src/{app/auth/{auth_content.js,auth_forgot_password.js,auth_login.js,auth_logout.js,auth_signup.js,auth_user.js},pages/{about/{index.html,index.js,style.css},contact/{index.html,index.js,style.css},forgot/{index.html,index.js,style.css},forgot_confirm/{index.html,index.js,style.css},home/{index.html,index.js,style.css},login/{index.html,index.js,style.css},privacy/{index.html,index.js,style.css},secret/{index.html,index.js,style.css},signup/{index.html,index.js,style.css},signup_confirm/{index.html,index.js,style.css},tos/{index.html,index.js,style.css}},pages.js,shared/{css/font.css,html/{footer.html,topnav.html}}}}
+touch my-project/{LICENSE,package.json,package-lock.json,README.MD,webpack.config.js,.babelrc,src/{app/auth/{auth_content.js,auth_forgot_password.js,auth_login.js,auth_logout.js,auth_signup.js,auth_user.js},pages/{about/{index.html,index.js,style.css},contact/{index.html,index.js,style.css},forgot/{index.html,index.js,style.css},forgot_confirm/{index.html,index.js,style.css},home/{index.html,index.js,style.css},login/{index.html,index.js,style.css},privacy/{index.html,index.js,style.css},secret/{index.html,index.js,style.css},signup/{index.html,index.js,style.css},signup_confirm/{index.html,index.js,style.css},tos/{index.html,index.js,style.css}},pages.js,shared/{css/font.css,html/{footer.html,topnav.html}},assets/images/favicon.ico}}
 ```
 ```sh
 cd my-project
@@ -292,7 +292,7 @@ module.exports = {
 }
 
 ```
-### Add your HTML content.
+### Add your HTML content to each html page.
 
 ```HTML
 
@@ -344,7 +344,7 @@ module.exports = {
 
 ```
 
-### Add your page index.js content.
+### Add this to each of your page/index.js content.
 
 ```js
 // Boostrap
@@ -397,14 +397,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ```
 
+### Add this to the src/pages.js file.
+
+```js
+
+module.exports = [
+  {
+    name: 'index',
+    path: './src/pages/home',
+  },
+  {
+    name: 'about',
+    path: './src/pages/about',
+  },
+  {
+    name: 'signup',
+    path: './src/pages/signup',
+  },
+  {
+    name: 'signup_confirm',
+    path: './src/pages/signup_confirm',
+  },
+  {
+    name: 'login',
+    path: './src/pages/login',
+  },
+  {
+    name: 'forgot',
+    path: './src/pages/forgot',
+  },
+  {
+    name: 'forgot_confirm',
+    path: './src/pages/forgot_confirm',
+  },
+  {
+    name: 'secret',
+    path: './src/pages/secret',
+  },
+  {
+    name: 'contact',
+    path: './src/pages/contact',
+  },
+  {
+    name: 'tos',
+    path: './src/pages/tos',
+  },
+  {
+    name: 'privacy',
+    path: './src/pages/privacy',
+  },
+];
+```
 
 ## Webpack Build Commands:
 
-### Production:
+### Build:
 
 ```sh
 
 npx webpack --mode production
+```
+
+```sh
 
 npx webpack serve --mode production
 
@@ -415,7 +469,9 @@ npx webpack serve --mode production
 ```sh
 
 npx webpack --mode development
+```
+
+```sh
 
 npx webpack serve --mode development
-
 ```
